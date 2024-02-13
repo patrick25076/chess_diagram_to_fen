@@ -5,6 +5,7 @@ import random as rd
 import warnings
 import numpy as np
 from tensorflow import keras
+import os
 
 # Define piece symbols for chess FEN notation
 piece_symbols = 'prbnkqPRBNKQ'
@@ -94,7 +95,9 @@ def generate_lichess_link(fen):
     return lichess_link
 
 # Load the trained chessboard detection model
-model = keras.models.load_model(r'assets\chess_model.h5')
+model_path = os.path.join('assets', 'chess_model.h5')
+
+model = keras.models.load_model(model_path)
 
 def predict_fen(image):   
     """
