@@ -49,6 +49,10 @@ def process_pdf(pdf_path, start_page=None, last_page=None):
 
 
 def main():
+    
+    if os.path.exists("output_data.csv"):
+        os.remove("output_data.csv")
+
     parser = argparse.ArgumentParser(description="Process a PDF containing chess diagrams.")
     parser.add_argument("pdf_path", help="Path to the PDF file.")
     parser.add_argument("--start_page", type=int, help="Start page number.")

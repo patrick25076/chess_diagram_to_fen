@@ -65,7 +65,7 @@ def board_detection(chessboard):
 
         # Crop ROI
         x, y, w, h = cv2.boundingRect(contour)
-        roi = chessboard[y:y+h, x:x+w]
+        roi = chessboard[y+11:y+h-10, x+10:x+w-10]
         rois.append(roi)
     
     rois, corners_list = sort_rois_by_position(rois, corners_list)

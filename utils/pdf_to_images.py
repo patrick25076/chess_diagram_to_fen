@@ -16,7 +16,7 @@ def save_pdf_images(pdf_path, output_folder, first=None, last=None):
         os.makedirs(output_folder)
 
     # Convert PDF to images
-    pages = convert_from_path(pdf_path, first_page=first, last_page=last)
+    pages = convert_from_path(pdf_path, first_page=first, last_page=last , dpi=500)
 
     # Save images to the output folder
     for count, page in enumerate(pages):

@@ -39,8 +39,8 @@ def preprocess_image(img):
     Returns:
     numpy.ndarray: The preprocessed image.
     """
-    height = 240
-    width = 240
+    height = 400
+    width = 400
 
     # Convert image to grayscale if it's not already
     if img.ndim == 2:
@@ -95,7 +95,7 @@ def generate_lichess_link(fen):
     return lichess_link
 
 # Load the trained chessboard detection model
-model_path = os.path.join('assets', 'chess_model.h5')
+model_path = os.path.join('assets', 'chess_modelv15_classic_dense_5ep.h5')
 
 model = keras.models.load_model(model_path)
 
