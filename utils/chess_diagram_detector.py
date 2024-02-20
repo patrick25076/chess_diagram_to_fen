@@ -53,7 +53,7 @@ def board_detection(chessboard):
     # Iterate through all contours (squares) and detect corners
     for contour in contours:
         # Skip contours with small area
-        if cv2.contourArea(contour) < 45000:
+        if cv2.contourArea(contour) < 30000:
             continue
         
         # Calculate the angles of the lines connecting the corners to the center
